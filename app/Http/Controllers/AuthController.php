@@ -65,7 +65,7 @@ class AuthController extends Controller
         $data = $request->validate(['email' => 'required|email']);
 
         $this->authRepository->forgotPassword($data);
-        return back()->with(['status' => 'Password reset link sent successfully']);
+        return  redirect()->route('login')->with(['success' => 'Password reset link sent successfully']);
     }
 
     public function showResetPasswordForm($token)

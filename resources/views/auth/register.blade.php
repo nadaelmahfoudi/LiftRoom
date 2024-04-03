@@ -7,8 +7,13 @@
             <h2 class="text-2xl font-semibold text-gray-800 mb-6">Inscription</h2>
             <form method="POST" action="{{ route('register') }}">
             @csrf
+            @method('POST')
                     <h1 class="text-gray-800 font-bold text-2xl mb-1">Welcome to LIFTROOM</h1>
-                    <p class="text-sm font-normal text-gray-600 mb-8">Create your account</p>
+                    <p class="text-sm font-normal text-gray-600 mb-8">Create your account</p> 
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Adresse name</label>
+                    <input type="text" id="name" name="name" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Enter Your name">
+                </div>
                 <div class="mb-4">
                     <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Adresse Email</label>
                     <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Enter Your Email">
