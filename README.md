@@ -1,8 +1,9 @@
-LIFT ROOM - Plateforme de Musculation Féminine
+#LIFT ROOM 
+- Plateforme de Musculation Féminine
 Bienvenue sur la plateforme LIFT ROOM, dédiée à la musculation féminine. Cette plateforme offre une variété de services personnalisés pour aider chaque femme à atteindre ses objectifs de remise en forme de manière flexible et abordable.
 
 Présentation du Site
-1. Website Name: LIFT ROOM
+1. Nom du SiteWeb: LIFT ROOM
 
 1.2 Présentation de l’entreprise:
 "LIFTROOM" offre une plateforme dédiée à la musculation féminine, proposant une gamme variée de services personnalisés.
@@ -21,7 +22,7 @@ Charte Graphique et Ergonomique
 Couleur dominante : Noir, Gris-foncé.
 Couleur secondaire : Jaune.
 Couleur tertiaire : Blanc.
-Police : Poppins.
+Police : Roboto , Poppins.
 2.2 Logo:
 Un logo simple, mémorable et unique a été créé, transmettant l'énergie et la féminité pour un site de gym pour femmes.
 
