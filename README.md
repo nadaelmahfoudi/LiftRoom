@@ -1,66 +1,91 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+LIFT ROOM - Plateforme de Musculation Féminine
+Bienvenue sur la plateforme LIFT ROOM, dédiée à la musculation féminine. Cette plateforme offre une variété de services personnalisés pour aider chaque femme à atteindre ses objectifs de remise en forme de manière flexible et abordable.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Présentation du Site
+1. Website Name: LIFT ROOM
 
-## About Laravel
+1.2 Présentation de l’entreprise:
+"LIFTROOM" offre une plateforme dédiée à la musculation féminine, proposant une gamme variée de services personnalisés.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1.3 Objectifs du site:
+L'objectif principal est de créer une communauté en ligne dédiée à la musculation féminine, offrant une variété de services adaptés à chaque cliente.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+1.3 Périmètre du site:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Disponible uniquement au Maroc.
+Intégralement "Responsive Design".
+Toutes les fonctionnalités sont accessibles sur mobile.
+Charte Graphique et Ergonomique
+2.1 Charte graphique:
 
-## Learning Laravel
+Couleur dominante : Noir, Gris-foncé.
+Couleur secondaire : Jaune.
+Couleur tertiaire : Blanc.
+Police : Poppins.
+2.2 Logo:
+Un logo simple, mémorable et unique a été créé, transmettant l'énergie et la féminité pour un site de gym pour femmes.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Arborescence du Site
+Le site se décompose en 8 pages principales :
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Home
+Sign-Up
+Login
+About Us
+Dashboard (espace Admin)
+Mes Programmes (espace Client)
+Contact
+Description Fonctionnelle du Site
+Page Home:
+Présentation du coaching club pour femmes, avantages du coaching personnalisé, témoignages.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Page About US:
+Présentation de l'entreprise et FAQ du Coaching Club.
 
-## Laravel Sponsors
+Page Dashboard:
+Gérer des Programmes, Exercices, Skills, Séances.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Page Mes Programmes:
+Affichage des programmes auxquels les utilisatrices sont abonnées.
 
-### Premium Partners
+Page Contact Us:
+Formulaire de contact pour les visiteurs.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Description Fonctionnelle du Back-Office
+Admin:
+Gestion des Programmes, Séances, Exercices, Skills, et acceptation des abonnements utilisatrices.
 
-## Contributing
+Utilisatrice:
+Possibilité de s'abonner à un programme et de modifier ses objectifs.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Informations Relatives au Contenu
+Optimisation du SEO pour chaque page.
+Technologies Utilisées
+Front-end:
 
-## Code of Conduct
+HTML
+Tailwind CSS
+JavaScript
+Back-end:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+PHP Laravel
+User Stories
+Tableau de Bord Administrateur:
 
-## Security Vulnerabilities
+Accès à un tableau de bord centralisé pour gérer les programmes, exercices, compétences et séances.
+Gestion des Programmes:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Ajout, édition et suppression de programmes d'entraînement.
+Gestion des Exercices:
 
-## License
+Ajout, édition et suppression d'exercices dans la bibliothèque.
+Gestion des Skills:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Ajout, édition et suppression de compétences à développer.
+Gestion des Séances:
+
+Création, édition et suppression de séances d'entraînement.
+Espace Utilisatrice:
+
+Inscription, connexion, consultation et abonnement à des programmes, gestion des objectifs.
+Merci d'utiliser la plateforme LIFT ROOM pour vos besoins en musculation féminine ! Si vous avez des questions ou des commentaires, n'hésitez pas à nous contacter via la page Contact ou bien via mon email (elmahfoudinada17@gmail.com) .
