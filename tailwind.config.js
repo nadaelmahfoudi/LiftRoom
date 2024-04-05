@@ -8,8 +8,8 @@ export default  {
   theme: {
     extend: {
       colors:{
-        graay : '#ffffff',
-        code: '#FF00FF'
+        graay : '#1F2937',
+        jaune: '#ffb800'
       }
     },
   },

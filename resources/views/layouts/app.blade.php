@@ -12,6 +12,7 @@
             height: 100%;
         }
     </style>
+    @vite('resources/css/app.css')
 </head>
 <body>
     <!-- Contenu de la vue -->

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@extends('layouts.navbar')
 
 @section('content')
 <body class="bg-cover bg-center" style="background-image: url('{{ asset('/img/Woman_training.svg') }}')">
@@ -26,7 +27,7 @@
                     <label for="confirmPassword" class="block text-gray-700 text-sm font-bold mb-2">Confirm Password</label>
                     <input type="password" id="confirmPassword" name="password_confirmation" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Confirm Your Password">
                 </div>
-                <button type="submit" class="w-full bg-slate-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-slate-700">S'inscrire</button>
+                <button type="submit" class="w-full bg-amber-400 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-600">S'inscrire</button>
                 <div class="flex justify-between mt-4">
                         
 

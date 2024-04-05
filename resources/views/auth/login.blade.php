@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@extends('layouts.navbar')
 
 @section('content')
 <body class="bg-cover bg-center" style="background-image: url('{{ asset('/img/Woman_training.svg') }}')">
@@ -20,7 +21,7 @@
                     <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
                     <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Enter Your Password">
                 </div>
-                <button type="submit" class="w-full bg-slate-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-slate-700">Se connecter</button>
+                <button type="submit" class="w-full bg-amber-400 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-600">Se connecter</button>
                 <div class="flex justify-between mt-4">
                         <a href="{{ route('password.request') }}"
                             class="text-sm ml-2 hover:text-blue-500 cursor-pointer hover:-translate-y-1 duration-500 transition-all">Forgot

@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@extends('layouts.navbar')
 
 @section('content')
 <body class="bg-cover bg-center" style="background-image: url('{{ asset('/img/Woman_training.svg') }}')">
@@ -14,7 +15,7 @@
                     <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Adresse Email</label>
                     <input type="email" id="email" name="email" class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500" placeholder="Enter Your Email">
                 </div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full" type="submit">
+                <button class="w-full bg-amber-400 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-600" type="submit">
                     Reset Password
                 </button>
             </form>
