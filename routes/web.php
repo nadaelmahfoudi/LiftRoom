@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,7 +27,7 @@ Route::get('/register', [AuthController::class, 'registerForm'])->name('register
 Route::post('/register', [AuthController::class, 'register']);
 Route::get('/Dashboard', [DashboardController::class, 'index'])->name('Dashboard');
 Route::get('/AboutUs', [AboutusController::class, 'index'])->name('AboutUs');
-
+Route::get('/ContactUs', [ContactusController::class, 'index'])->name('ContactUs');
 
 Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
