@@ -22,7 +22,7 @@ class AuthController extends Controller
         
         if ($this->authRepository->login($credentials)) {
             $request->session()->regenerate();
-            return redirect('/');
+            return redirect('/Dashboard');
         }
         
         return back()->withInput($request->only('email'));
@@ -44,7 +44,7 @@ class AuthController extends Controller
         $data = $request->validated();
         
         $this->authRepository->register($data);
-        return redirect('/');
+        return redirect('/Dashboard');
     }
 
     public function logout(Request $request)
