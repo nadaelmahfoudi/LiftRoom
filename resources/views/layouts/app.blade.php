@@ -11,6 +11,16 @@
         html, body {
             height: 100%;
         }
+        .exercise-title {
+           
+            font-weight: bold;
+            color: #b45309; }
+
+        .exercise-repetition {
+            
+            font-style: italic;
+            color: #b45309;
+        }
     </style>
     @vite('resources/css/app.css')
 </head>

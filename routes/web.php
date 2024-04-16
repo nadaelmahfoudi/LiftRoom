@@ -4,6 +4,8 @@ use App\Http\Controllers\AboutusController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ExerciceController;
+use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,3 +41,9 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/reset-password/{token}', [AuthController::class, 'showResetPasswordForm'])->name('password.reset');
     Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.update');
 });
+
+Route::resource('exercices', ExerciceController::class);
+Route::get('/exercices', [ExerciceController::class, 'index'])->name('exercices');
+
+
+Route::resource('sessions', SessionController::class);
