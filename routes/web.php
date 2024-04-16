@@ -6,6 +6,7 @@ use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExerciceController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,3 +48,4 @@ Route::get('/exercices', [ExerciceController::class, 'index'])->name('exercices'
 
 
 Route::resource('sessions', SessionController::class);
+Route::resource('skills', SkillController::class);
