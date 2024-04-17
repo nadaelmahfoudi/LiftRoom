@@ -8,6 +8,8 @@ use App\Repositories\SessionRepository;
 use App\Repositories\SessionRepositoryInterface;
 use App\Repositories\SkillRepository;
 use App\Repositories\SkillRepositoryInterface;
+use App\Repositories\ProgrammeRepository;
+use App\Repositories\ProgrammeRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -29,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
             SkillRepositoryInterface::class,
             SkillRepository::class,
         );
+        $this->app->bind(ProgrammeRepositoryInterface::class, ProgrammeRepository::class);
     }
 
     /**
