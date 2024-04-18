@@ -26,6 +26,7 @@ class ProgrammeRequest extends FormRequest
         return [
             'titre' => 'required',
             'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif', 
             'sessions.*' => 'required',
             'days.*' => 'required',
             'skills.*' => 'required',
@@ -42,6 +43,9 @@ class ProgrammeRequest extends FormRequest
         return [
             'titre.required' => 'Le titre du programme est requis',
             'description.required' => 'La description du programme est requise',
+            'image.required' => 'Une image de l\'exercice est requise.',
+            'image.image' => 'Le fichier téléversé doit être une image.',
+            'image.mimes' => 'Le fichier image doit être de type :jpeg, :png, :jpg ou :gif.',
             'sessions.*.required' => 'Veuillez sélectionner une session',
             'days.*.required' => 'Veuillez spécifier un jour pour chaque session',
             'skills.*.required' => 'Veuillez spécifier un objectif pour chaque session',

@@ -35,6 +35,11 @@
                 <input type="text" name="description" id="description" class="bg-slate-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ $programme->description }}">
             </div>
 
+            <div class="mb-4">
+                <label for="image" class="block text-slate-200 text-sm font-bold mb-2">Image:</label>
+                <input type="file" name="image" id="image" class="bg-slate-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
             <div id="show_item" class="mt-4">
                 @foreach ($programme->sessions as $session)
                 <div class="flex flex-wrap mb-3  session-row session-row-{{ $loop->index }}">

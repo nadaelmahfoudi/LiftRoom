@@ -34,6 +34,11 @@
                 <input type="text" name="description" id="description" class="bg-slate-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
             </div>
 
+            <div class="mb-4">
+                <label for="image" class="block text-slate-200 text-sm font-bold mb-2">Image:</label>
+                <input type="file" name="image" id="image" class="bg-slate-400 appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            </div>
+
             <div id="show_item" class="mt-4">
                 <div class="flex flex-wrap mb-3 ">
                     <div class="w-full md:w-5/12 mb-3 md:mb-0">

@@ -53,6 +53,10 @@ class ProgrammeController extends Controller
         // Attach skills
         $skills = $request->input('skills');
         $programme->skills()->attach($skills);
+
+        if ($request->hasFile('image')) {
+            $this->programmeRepository->storeFile($programme->id, $request->file('image'));
+        }
     
         return redirect()->route('programmes.index')->with('success', 'Programme créé avec succès');  
     }
@@ -83,6 +87,11 @@ class ProgrammeController extends Controller
         // Sync skills
         $skills = $request->input('skills');
         $programme->skills()->sync($skills);
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('programme_images', 'public'); 
+            $form['image'] = $imagePath; 
+        }
     
         return redirect()->route('programmes.index')->with('success', 'La programme a été modifiée avec succès');  
     }

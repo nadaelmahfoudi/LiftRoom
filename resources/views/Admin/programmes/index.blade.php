@@ -33,6 +33,7 @@
                                     <th  scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-300 dark:text-gray-400">id</th>
                                     <th  scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-300 dark:text-gray-400">Name</th>
                                     <th  scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-300 dark:text-gray-400">Description</th>
+                                    <th  scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-300 dark:text-gray-400">Image</th>
                                     <th  scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-300 dark:text-gray-400">Sessions</th>
                                     <th  scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-300 dark:text-gray-400">Objectifs</th>
                                     <th  scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-300 dark:text-gray-400">Actions</th>
@@ -48,6 +49,13 @@
                                     {{ $programme->titre }}
                                 </td>
                                 <td class="px-4 py-4 text-sm text-gray-800 dark:text-gray-300 whitespace-nowrap">{{ $programme->description}}</td>
+                                <td class="px-4 py-4 text-sm font-medium text-gray-800 dark:text-gray-200 whitespace-nowrap">
+                                    @if ($programme->image)
+                                    <img src="{{ asset('storage/' . $programme->image) }}" alt="programme Image">
+                                    @else
+                                    <p>No image available</p>
+                                    @endif
+                                </td>
                                 <td class="px-4 py-4 text-sm text-gray-800 dark:text-gray-300 whitespace-nowrap">
                                     @foreach($programme->sessions as $session)
                                         <li class="px-4 py-4 text-sm font-medium text-gray-900 dark:text-gray-200 whitespace-nowrap">

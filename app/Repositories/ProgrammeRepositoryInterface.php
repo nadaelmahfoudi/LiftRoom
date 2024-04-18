@@ -15,4 +15,8 @@ interface ProgrammeRepositoryInterface
     public function update(array $data, $id);
 
     public function delete($id);
+
+    public function storeFile($programmeId, $file);
+
+    public function updateFile($programmeId, $file);
 }

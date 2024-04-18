@@ -9,9 +9,10 @@ class Programme extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titre', 'description'];
+    protected $fillable = ['titre', 'description', 'image'];
 
     public function sessions()
+
     {
         return $this->belongsToMany(Session::class, 'programme_session')->withPivot('day');
     }

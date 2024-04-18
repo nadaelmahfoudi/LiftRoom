@@ -34,4 +34,34 @@ class ProgrammeRepository implements ProgrammeRepositoryInterface
         $programme = Programme::findOrFail($id);
         $programme->delete();
     }
+
+
+    public function storeFile($programmeId, $file)
+    {
+        $programme = Programme::findOrFail($programmeId);
+
+        $imagePath = $file->store('programme_images', 'public');
+
+        $programme->image = $imagePath;
+        $programme->save();
+
+        return $programme;
+    }
+
+    public function updateFile($programmeId, $file)
+    {
+        $programme = Programme::findOrFail($programmeId);
+
+        $imagePath = $file->store('programme_images', 'public');
+
+        $programme->image = $imagePath;
+        $programme->save();
+
+        return $programme;
+    }
+
+    public function find($id)
+    {
+        return Programme::find($id);
+    }
 }
