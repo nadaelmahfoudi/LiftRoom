@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ExerciceRequest;
+use App\Models\Exercice;
 use App\Repositories\ExerciceRepositoryInterface;
 use Illuminate\Http\Request;
 
@@ -74,5 +75,12 @@ class ExerciceController extends Controller
         $this->exerciceRepository->delete($id);
         
         return redirect()->route('exercices')->with('success', 'Company deleted successfully.');
-    }}
+    }
+
+   public function showExercises()
+    {
+        $exercices = $this->exerciceRepository->getAll();
+        return view('Exercises', compact('exercices'));
+    }
+}
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactusController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExerciceController;
+use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\ProgrammeController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SkillController;
@@ -33,6 +34,7 @@ Route::get('/Dashboard', [DashboardController::class, 'index'])->name('Dashboard
 Route::get('/AboutUs', [AboutusController::class, 'index'])->name('AboutUs');
 Route::get('/ContactUs', [ContactusController::class, 'index'])->name('ContactUs');
 
+
 Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
@@ -46,8 +48,12 @@ Route::middleware(['guest'])->group(function () {
 
 Route::resource('exercices', ExerciceController::class);
 Route::get('/exercices', [ExerciceController::class, 'index'])->name('exercices');
+Route::get('/Exercises', [ExerciceController::class, 'showExercises'])->name('Exercises');
 
 
 Route::resource('sessions', SessionController::class);
+
 Route::resource('skills', SkillController::class);
+
 Route::resource('programmes', ProgrammeController::class);
+Route::get('/', [ProgrammeController::class, 'showProgramme'])->name('welcome');
