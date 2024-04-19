@@ -26,7 +26,7 @@
                     </div>
 
 
-                    <div class="flex justify-center space-x-4 mb-2"> 
+                    <div class="flex justify-center space-x-4 mb-2">
 
                         <!-- Border -->
                         <a class="bg-gray-500 inline-block rounded border border-current px-8 py-3 text-sm font-medium text-amber-400 transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:text-amber-400" href="{{route('Exercises')}}">
