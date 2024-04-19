@@ -35,6 +35,12 @@ class ProgrammeController extends Controller
         return view('Admin.programmes.create', compact('sessions', 'skills'));
     }
 
+    public function show($id)
+    {
+        $programme = $this->programmeRepository->getById($id);
+        return view('Admin.programmes.show', compact('programme'));
+    }
+
     public function store(ProgrammeRequest $request)
     {
         $form = $request->validated();
@@ -103,5 +109,11 @@ class ProgrammeController extends Controller
     {
         $this->programmeRepository->delete($id);
         return redirect()->route('programmes.index')->with('success', 'La programme a été supprimée avec succès');  
+    }
+
+    public function showProgramme(ProgrammeRepositoryInterface $programmeRepository)
+    {
+        $programmes = $programmeRepository->getAllPaginated(3); 
+        return view('welcome', compact('programmes'));
     }
 }
