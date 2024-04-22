@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\AbonnementRepository;
+use App\Repositories\AbonnementRepositoryInterface;
 use App\Repositories\ExerciceRepository;
 use App\Repositories\ExerciceRepositoryInterface;
 use App\Repositories\SessionRepository;
@@ -31,7 +33,14 @@ class AppServiceProvider extends ServiceProvider
             SkillRepositoryInterface::class,
             SkillRepository::class,
         );
-        $this->app->bind(ProgrammeRepositoryInterface::class, ProgrammeRepository::class);
+        $this->app->bind(
+            ProgrammeRepositoryInterface::class, 
+            ProgrammeRepository::class
+        );
+        $this->app->bind(
+            AbonnementRepositoryInterface::class, 
+            AbonnementRepository::class
+        );
     }
 
     /**
