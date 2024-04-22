@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\Role;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 use App\Models\User;
@@ -32,4 +33,8 @@ class AuthRepository implements AuthRepositoryInterface
             $user->save();
         });
     }
+    public function assignRole(User $user, string $roleName)
+        {
+            $user->roles()->attach(Role::where('role', $roleName)->first());
+        }
 }

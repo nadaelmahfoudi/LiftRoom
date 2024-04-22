@@ -43,7 +43,8 @@ class AuthController extends Controller
     {
         $data = $request->validated();
         
-        $this->authRepository->register($data);
+        $user = $this->authRepository->register($data);
+        $this->authRepository->assignRole($user, 'client');
         return redirect('/Dashboard');
     }
 
