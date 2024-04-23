@@ -8,6 +8,7 @@ use App\Http\Controllers\ExerciceController;
 use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\ProgrammeController;
 use App\Http\Controllers\AbonnementController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SkillController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,8 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/Dashboard', [DashboardController::class, 'index'])->name('Dashboard');
 Route::get('/AboutUs', [AboutusController::class, 'index'])->name('AboutUs');
 Route::get('/ContactUs', [ContactusController::class, 'index'])->name('ContactUs');
+Route::get('/Profile', [ProfileController::class, 'index'])->name('Profile');
+
 
 
 Route::middleware(['auth'])->group(function () {
@@ -60,3 +63,5 @@ Route::resource('programmes', ProgrammeController::class);
 Route::get('/', [ProgrammeController::class, 'showProgramme'])->name('welcome');
 
 Route::post('/abonnements', [AbonnementController::class, 'store'])->name('abonnements.store');
+
+Route::post('/Profile', [ProfileController::class, 'update'])->name('profile.update');

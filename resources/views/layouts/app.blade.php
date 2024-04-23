@@ -21,11 +21,29 @@
             font-style: italic;
             color: #b45309;
         }
+        
+
     </style>
     @vite('resources/css/app.css')
 </head>
 <body>
     <!-- Contenu de la vue -->
     @yield('content')
+    <script>
+        $(document).on('click', '.pagination a', function(e) {
+            e.preventDefault();
+
+            var url = $(this).attr('href');
+
+            $.ajax({
+                url: url,
+                type: 'get',
+                success: function(response) {
+                    $('.content').html(response);
+                }
+            });
+        });
+
+    </script>
 </body>
 </html>

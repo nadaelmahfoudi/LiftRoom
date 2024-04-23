@@ -12,6 +12,8 @@ use App\Repositories\SkillRepository;
 use App\Repositories\SkillRepositoryInterface;
 use App\Repositories\ProgrammeRepository;
 use App\Repositories\ProgrammeRepositoryInterface;
+use App\Repositories\UserRepository;
+use App\Repositories\UserRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -40,6 +42,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(
             AbonnementRepositoryInterface::class, 
             AbonnementRepository::class
+        );
+        $this->app->bind(
+            UserRepositoryInterface::class, 
+            UserRepository::class
         );
     }
 
