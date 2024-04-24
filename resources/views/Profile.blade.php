@@ -60,6 +60,12 @@
                         </div>
                     </div>
                 </form>
+                <form action="{{ route('logout') }}" method="POST" class="mt-4">
+                    @csrf
+                    <button type="submit" class="bg-amber-400 text-white hover:bg-opacity-90 font-bold py-3.5 px-5 rounded-xl">
+                        Logout !
+                    </button>
+                </form>
             </div>
         </div>
     </div>
