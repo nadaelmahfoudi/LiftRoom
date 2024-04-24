@@ -10,7 +10,7 @@ class CreateAbonnementsTable extends Migration
     {
         Schema::create('abonnements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('programme_id')->constrained()->onDelete('cascade');
             $table->enum('statut',['en attente' , 'acceptee'])->default('en attente');
             $table->timestamps();

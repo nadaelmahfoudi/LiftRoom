@@ -64,4 +64,15 @@ class ProgrammeRepository implements ProgrammeRepositoryInterface
     {
         return Programme::find($id);
     }
+
+    public function getAllPaginated($perPage)
+    {
+        $programmes = Programme::paginate($perPage);
+        return $programmes;
+    }
+
+    public function getSubscriptions($id){
+        $programme = Programme::findOrFail($id);
+        return $programme->abonnements;
+    }
 }

@@ -8,4 +8,5 @@ interface AbonnementRepositoryInterface
 {
     public function create(array $data);
     public function findById(int $id): ?Abonnement;
+    public function updateStatus(int $abonnementId, string $status);
 }

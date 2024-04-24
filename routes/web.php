@@ -65,3 +65,7 @@ Route::get('/', [ProgrammeController::class, 'showProgramme'])->name('welcome');
 Route::post('/abonnements', [AbonnementController::class, 'store'])->name('abonnements.store');
 
 Route::post('/Profile', [ProfileController::class, 'update'])->name('profile.update');
+
+Route::get('/showSubscribedProgramme', [ProgrammeController::class, 'showSubscribedProgramme'])->name('showSubscribedProgramme');
+
+Route::post('/programmes/accept/{abonnement}', [AbonnementController::class, 'acceptAbonnement'])->name('abonnements.accept');

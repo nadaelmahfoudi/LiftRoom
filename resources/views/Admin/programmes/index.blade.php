@@ -36,6 +36,7 @@
                                     <th  scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-300 dark:text-gray-400">Image</th>
                                     <th  scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-300 dark:text-gray-400">Sessions</th>
                                     <th  scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-300 dark:text-gray-400">Objectifs</th>
+                                    <th  scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-300 dark:text-gray-400">Subscribers</th>
                                     <th  scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-300 dark:text-gray-400">Actions</th>
                             </tr>
 
@@ -70,8 +71,24 @@
                                             </li>
                                             @endforeach
                                 </td>
+                                <td class="px-4 py-4 text-sm text-gray-800 dark:text-gray-300 whitespace-nowrap">
+                                @if(isset($programme->subscriptions) && count($programme->subscriptions) > 0)
+                                @foreach($programme->subscriptions as $abonnement)
+                                    <div class="flex items-center justify-between">
+                                        <span>{{ $abonnement->user->name }}</span>
+                                        <form action="{{ route('abonnements.accept', $abonnement->id) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                                                Accepter
+                                            </button>
+                                        </form>
+                                    </div>
+                                @endforeach
+                                @else
+                                    <p>No subscribers for this programme</p>
+                                @endif
+                                </td>
                                 
-
                                 <td>
                                     <div class="flex">
                                         <a href="{{ route('programmes.edit', $programme->id) }}" class="btn btn-info bg-blue-500 py-2 px-4 rounded hover:bg-blue-700 mr-2">Edit</a> 

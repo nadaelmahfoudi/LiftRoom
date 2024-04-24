@@ -15,5 +15,11 @@ class AbonnementRepository implements AbonnementRepositoryInterface
     {
         return Abonnement::find($id);
     }
+    public function updateStatus(int $abonnementId, string $status)
+    {
+        $abonnement = Abonnement::findOrFail($abonnementId);
+        $abonnement->update(['statut' => $status]);
+        return $abonnement;
+    }
 
 }

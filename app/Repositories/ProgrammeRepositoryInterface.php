@@ -19,4 +19,8 @@ interface ProgrammeRepositoryInterface
     public function storeFile($programmeId, $file);
 
     public function updateFile($programmeId, $file);
+
+    public function getAllPaginated($perPage);
+
+    public function getSubscriptions($id);
 }

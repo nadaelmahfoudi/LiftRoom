@@ -8,25 +8,35 @@ use App\Repositories\SessionRepositoryInterface;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProgrammeRequest;
 use App\Repositories\SkillRepositoryInterface;
+use App\Repositories\UserRepositoryInterface;
 
 class ProgrammeController extends Controller
 {
     protected $programmeRepository;
     protected $sessionRepository;
     protected $skillRepository;
+    protected $userRepository;
     
-    public function __construct(ProgrammeRepositoryInterface $programmeRepository, SessionRepositoryInterface $sessionRepository, SkillRepositoryInterface $skillRepository)
+    public function __construct(ProgrammeRepositoryInterface $programmeRepository, SessionRepositoryInterface $sessionRepository, SkillRepositoryInterface $skillRepository, UserRepositoryInterface $userRepository)
     {
         $this->programmeRepository = $programmeRepository;
         $this->sessionRepository = $sessionRepository;
         $this->skillRepository = $skillRepository; 
+        $this->userRepository = $userRepository;
     }
 
     public function index()
     {
         $programmes = $this->programmeRepository->getAll();
+    
+        foreach ($programmes as &$programme) {
+            $programme->subscriptions = $this->programmeRepository->getSubscriptions($programme->id)->filter(function ($subscription){
+                return $subscription->statut === 'en attente';
+            });
+        }
+    
         return view('Admin.programmes.index', compact('programmes'));
-    }
+    }    
 
     public function create()
     {
@@ -39,6 +49,11 @@ class ProgrammeController extends Controller
     {
         $programme = $this->programmeRepository->getById($id);
         return view('Admin.programmes.show', compact('programme'));
+    }
+
+    public function showSubscribedProgramme()
+    {
+        return view('Admin.programmes.showSubscribedProgramme');
     }
 
     public function store(ProgrammeRequest $request)

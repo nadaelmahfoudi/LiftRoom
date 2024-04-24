@@ -26,4 +26,9 @@ class Programme extends Model
     {
         return $this->belongsToMany(Skill::class);
     }
+
+    public function abonnements(){
+        return $this->hasMany(Abonnement::class);
+    }
+
 }
