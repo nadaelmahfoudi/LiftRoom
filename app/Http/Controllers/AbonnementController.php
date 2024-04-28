@@ -18,12 +18,17 @@ class AbonnementController extends Controller
 
     public function store(AbonnementRequest $request)
     {
-        
+
         $validatedData = $request->validated();
         $userId = Auth::id();
+        $existingAbonnement = $this->abonnementRepository->getExistingAbonnement($userId, $validatedData['programme_id']);
+    
+        if ($existingAbonnement) {
+            return redirect()->back()->with('error', 'Vous êtes déjà abonné à ce programme.');
+        }
         $validatedData['user_id'] = $userId;
         $abonnement = $this->abonnementRepository->create($validatedData);
-        return redirect()->back();
+        return redirect()->back()->with('succes', 'Vous êtes maintenant abonné à ce programme.');
     }
 
     public function acceptAbonnement($abonnementId)

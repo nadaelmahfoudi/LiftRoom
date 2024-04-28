@@ -29,5 +29,11 @@ class UserRepository implements UserRepositoryInterface
             $query->where('programme_id', $programmeId);
         })->get();
     }
+
+
+    public function getSubscribedProgrammes(User $user)
+    {
+        return $user->abonnements; 
+    }
     
 }

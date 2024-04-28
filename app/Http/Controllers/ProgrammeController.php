@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ProgrammeRequest;
 use App\Repositories\SkillRepositoryInterface;
 use App\Repositories\UserRepositoryInterface;
+use Illuminate\Support\Facades\Auth;
 
 class ProgrammeController extends Controller
 {
@@ -51,9 +52,13 @@ class ProgrammeController extends Controller
         return view('Admin.programmes.show', compact('programme'));
     }
 
-    public function showSubscribedProgramme()
+    public function showSubscribedProgramme(UserRepositoryInterface $userRepository)
     {
-        return view('Admin.programmes.showSubscribedProgramme');
+        $user = Auth::user();
+    
+        $abonnements = $userRepository->getSubscribedProgrammes($user)->where('statut', 'acceptee');
+    
+        return view('Admin.programmes.showSubscribedProgramme', ['abonnements' => $abonnements]);
     }
 
     public function store(ProgrammeRequest $request)
@@ -131,4 +136,29 @@ class ProgrammeController extends Controller
         $programmes = $programmeRepository->getAllPaginated(3); 
         return view('welcome', compact('programmes'));
     }
+
+    public function showSessions($id)
+    {
+        $user = Auth::user();
+        $abonnements = $this->userRepository->getSubscribedProgrammes($user);
+        
+        $programme = $this->programmeRepository->getById($id);
+        $sessions = $programme->sessions()->get();
+        
+        return view('Admin.programmes.showSessions', compact('abonnements', 'programme', 'sessions'));
+    }
+    
+
+    public function showExercices($session_id)
+    {
+        $user = Auth::user();
+        $abonnements = $this->userRepository->getSubscribedProgrammes($user);
+
+        $session = $this->sessionRepository->getById($session_id);
+        $exercices = $session->exercices;
+
+        return view('Admin.programmes.showExercise', compact('abonnements', 'session', 'exercices'));
+    }
+
+    
 }

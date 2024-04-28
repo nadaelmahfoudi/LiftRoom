@@ -17,4 +17,9 @@ class Abonnement extends Model
     {
         return $this->belongsTo(Programme::class);
     }
+
+    public function programme()
+    {
+        return $this->belongsTo(Programme::class);
+    }
 }

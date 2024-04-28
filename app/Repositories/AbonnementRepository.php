@@ -22,4 +22,11 @@ class AbonnementRepository implements AbonnementRepositoryInterface
         return $abonnement;
     }
 
+    public function getExistingAbonnement($userId, $programmeId)
+    {
+        return Abonnement::where('user_id', $userId)
+                         ->where('programme_id', $programmeId)
+                         ->exists();
+    }
+
 }

@@ -25,7 +25,7 @@
                         <p>{{ $exercice->duree }}</p>
                     </div>
 
-
+                    
                     <div class="flex justify-center space-x-4 mb-2">
 
                         <!-- Border -->
