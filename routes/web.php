@@ -63,6 +63,8 @@ Route::resource('programmes', ProgrammeController::class);
 Route::get('/', [ProgrammeController::class, 'showProgramme'])->name('welcome');
 Route::get('/programmes/{id}/sessions', [ProgrammeController::class, 'showSessions'])->name('programmes.sessions');
 Route::get('/sessions/{session_id}/exercices', [ProgrammeController::class, 'showExercices'])->name('sessions.exercices');
+Route::get('/search', [ProgrammeController::class, 'search'])->name('search');
+
 
 Route::post('/abonnements', [AbonnementController::class, 'store'])->name('abonnements.store');
 

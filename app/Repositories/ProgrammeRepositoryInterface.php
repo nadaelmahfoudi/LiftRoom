@@ -23,4 +23,6 @@ interface ProgrammeRepositoryInterface
     public function getAllPaginated($perPage);
 
     public function getSubscriptions($id);
+    
+    public function searchByTitle($query);
 }

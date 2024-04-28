@@ -160,5 +160,14 @@ class ProgrammeController extends Controller
         return view('Admin.programmes.showExercise', compact('abonnements', 'session', 'exercices'));
     }
 
+    public function search(Request $request)
+    {
+        $searchQuery = $request->input('search');
+
+        $programmes = $this->programmeRepository->searchByTitle($searchQuery)->paginate(3);
+
+        return view('welcome', compact('programmes'));
+    }
+
     
 }

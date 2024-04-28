@@ -75,4 +75,9 @@ class ProgrammeRepository implements ProgrammeRepositoryInterface
         $programme = Programme::findOrFail($id);
         return $programme->abonnements;
     }
+
+    public function searchByTitle($title)
+    {
+        return Programme::where('titre', 'like', '%' . $title . '%');
+    }
 }
