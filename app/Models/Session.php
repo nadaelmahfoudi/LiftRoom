@@ -15,4 +15,9 @@ class Session extends Model
     {
         return $this->belongsToMany(Exercice::class, 'session_exercice')->withPivot('repetition');
     }
+
+    public function programmes()
+    {
+        return $this->belongsToMany(Programme::class, 'programme_session')->withPivot('day');
+    }
 }

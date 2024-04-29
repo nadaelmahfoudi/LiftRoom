@@ -8,8 +8,7 @@
         <p class="max-w-2xl mx-auto my-6 text-center text-slate-300 dark:text-gray-300">Here are the sessions for the programs you are subscribed to.</p>
 
         <div class="flex flex-wrap justify-center">
-        @foreach($abonnements as $abonnement)
-            @foreach($abonnement->programme->sessions as $session)
+        @foreach($sessions as $session)
                 <div class="flex flex-col items-center p-8 transition-colors duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group  bg-gray-900 dark:hover:border-transparent mb-8 mr-4">
                     <img class="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="" alt="">
                     <h1 class="mt-4 text-2xl font-semibold text-gray-300 capitalize dark:text-white group-hover:text-white">{{ $session->name }}</span> every <span class="exercise-repetition">{{ $session->pivot->day }}</h1>
@@ -18,7 +17,6 @@
                         Follow the Exercices!
                     </a>
                 </div>
-            @endforeach
         @endforeach
         </div>
         

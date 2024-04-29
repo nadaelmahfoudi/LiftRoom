@@ -80,4 +80,11 @@ class ProgrammeRepository implements ProgrammeRepositoryInterface
     {
         return Programme::where('titre', 'like', '%' . $title . '%');
     }
+
+    public function filterBySkills($skills)
+    {
+        return Programme::whereHas('skills', function ($query) use ($skills) {
+            $query->whereIn('id', $skills);
+        });
+    }
 }

@@ -14,12 +14,12 @@
         .exercise-title {
            
             font-weight: bold;
-            color: #b45309; }
+            color: #946B00; }
 
         .exercise-repetition {
             
             font-style: italic;
-            color: #b45309;
+            color: #946B00;
         }
         
 

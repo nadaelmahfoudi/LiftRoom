@@ -7,6 +7,7 @@ use App\Repositories\ProgrammeRepositoryInterface;
 use App\Repositories\SessionRepositoryInterface;
 use Illuminate\Http\Request;
 use App\Http\Requests\ProgrammeRequest;
+use App\Models\Skill;
 use App\Repositories\SkillRepositoryInterface;
 use App\Repositories\UserRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
@@ -52,11 +53,11 @@ class ProgrammeController extends Controller
         return view('Admin.programmes.show', compact('programme'));
     }
 
-    public function showSubscribedProgramme(UserRepositoryInterface $userRepository)
+    public function showSubscribedProgramme()
     {
         $user = Auth::user();
     
-        $abonnements = $userRepository->getSubscribedProgrammes($user)->where('statut', 'acceptee');
+        $abonnements = $this->userRepository->getSubscribedProgrammes($user)->where('statut', 'acceptee');
     
         return view('Admin.programmes.showSubscribedProgramme', ['abonnements' => $abonnements]);
     }
@@ -131,21 +132,13 @@ class ProgrammeController extends Controller
         return redirect()->route('programmes.index')->with('success', 'La programme a été supprimée avec succès');  
     }
 
-    public function showProgramme(ProgrammeRepositoryInterface $programmeRepository)
-    {
-        $programmes = $programmeRepository->getAllPaginated(3); 
-        return view('welcome', compact('programmes'));
-    }
-
     public function showSessions($id)
     {
         $user = Auth::user();
-        $abonnements = $this->userRepository->getSubscribedProgrammes($user);
         
         $programme = $this->programmeRepository->getById($id);
-        $sessions = $programme->sessions()->get();
-        
-        return view('Admin.programmes.showSessions', compact('abonnements', 'programme', 'sessions'));
+        $sessions = $programme->sessions;
+        return view('Admin.programmes.showSessions', compact('programme', 'sessions'));
     }
     
 
@@ -163,11 +156,19 @@ class ProgrammeController extends Controller
     public function search(Request $request)
     {
         $searchQuery = $request->input('search');
+        $skills = $this->skillRepository->getAll();
 
         $programmes = $this->programmeRepository->searchByTitle($searchQuery)->paginate(3);
 
-        return view('welcome', compact('programmes'));
+        return view('welcome', compact('programmes', 'skills'));
     }
 
+    public function filter(Request $request)
+    {
+        $skills = $this->skillRepository->getAll();
+        $programmes = $this->programmeRepository->filterBySkills($request->input('skills'))->paginate(3);
+        return view('welcome', compact('programmes', 'skills'));
+    }
+    
     
 }

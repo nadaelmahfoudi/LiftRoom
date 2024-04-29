@@ -17,10 +17,6 @@ class Programme extends Model
         return $this->belongsToMany(Session::class, 'programme_session')->withPivot('day');
     }
 
-    public function enrollments()
-    {
-        return $this->hasMany(Enrollment::class);
-    }
 
     public function skills()
     {

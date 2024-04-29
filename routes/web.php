@@ -8,6 +8,7 @@ use App\Http\Controllers\ExerciceController;
 use App\Http\Controllers\ExerciseController;
 use App\Http\Controllers\ProgrammeController;
 use App\Http\Controllers\AbonnementController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\SkillController;
@@ -24,9 +25,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [HomeController::class, 'index'])->name('welcome');
+
 
 Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -60,10 +61,14 @@ Route::resource('sessions', SessionController::class);
 Route::resource('skills', SkillController::class);
 
 Route::resource('programmes', ProgrammeController::class);
-Route::get('/', [ProgrammeController::class, 'showProgramme'])->name('welcome');
 Route::get('/programmes/{id}/sessions', [ProgrammeController::class, 'showSessions'])->name('programmes.sessions');
 Route::get('/sessions/{session_id}/exercices', [ProgrammeController::class, 'showExercices'])->name('sessions.exercices');
 Route::get('/search', [ProgrammeController::class, 'search'])->name('search');
+Route::get('/filter', [ProgrammeController::class, 'filter'])->name('filter');
+Route::get('/programmes', [ProgrammeController::class, 'filter'])->name('filter');
+Route::get('/programmes', [ProgrammeController::class, 'index'])->name('programmes.index');
+
+
 
 
 Route::post('/abonnements', [AbonnementController::class, 'store'])->name('abonnements.store');
