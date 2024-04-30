@@ -5,7 +5,7 @@
 <div class="flex">
     @include('layouts.sidebar')
     <section class="container px-4 mx-auto pt-10 shadow-2xl bg-graay">
-    <a href="{{ route('exercices.create') }}" class="btn btn-info bg-green-400 py-2 px-4 rounded">Create a new Exercice</a>
+    <a href="{{ route('exercices.create') }}" class="btn btn-info bg-amber-400 py-2 px-4 rounded">Create a new Exercice</a>
         <h2 class="text-lg font-medium text-gray-800 dark:text-white mb-4">Exercices</h2>
 
         @if ($message = Session::get('success'))

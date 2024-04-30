@@ -3,7 +3,7 @@
 @include('layouts.navbar')
 
 
-<section class="ezy__epprofile4 light py-14 md:py-24  bg-gray-700 text-zinc-900  relative overflow-hidden z-10">
+<section class="ezy__epprofile4 light py-14 md:py-24  bg-gray-700 text-zinc-900 ">
     <div class="container mx-auto ">
 
         <!-- content -->
@@ -25,7 +25,7 @@
                                     <label for="name" class="mb-2 text-black">Your Name !</label>
                                     <input
                                         type="text" name="name"
-                                        class="h-12 p-4 bg-amber-50 dark:bg-slate-700 rounded-xl border-none focus:outline-none"
+                                        class="h-12 p-4 bg-gray-400 dark:bg-slate-700 rounded-xl border-none focus:outline-none"
                                         id="name"  value="{{$user->name}}"
                                     />
                                 </div>
@@ -35,7 +35,7 @@
                                     <label for="email" class="mb-2">Your Email !</label>
                                     <input
                                         type="email" name="email"
-                                        class="h-12 p-4 bg-amber-50 dark:bg-slate-700 rounded-xl border-none focus:outline-none"
+                                        class="h-12 p-4 bg-gray-400 dark:bg-slate-700 rounded-xl border-none focus:outline-none"
                                         id="email" value="{{ $user->email }}"
                                     />
                                 </div>
@@ -53,7 +53,7 @@
                     <div class="grid grid-cols-1"> <!-- Remplace grid-cols-12 par grid-cols-1 -->
                         <div class="col-span-12 lg:col-span-5 mt-6">
                             <div>
-                                <button type="submit" class="bg-amber-600 text-white hover:bg-opacity-90 font-bold py-3.5 px-5 rounded-xl w-full">
+                                <button type="submit" class="bg-amber-600 text-white hover:bg-opacity-90 font-bold py-3.5 px-5 rounded-xl ">
                                     Update All Records
                                 </button>
                             </div>

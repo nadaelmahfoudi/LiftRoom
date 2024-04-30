@@ -74,11 +74,11 @@
                                 <td class="px-4 py-4 text-sm text-gray-800 dark:text-gray-300 whitespace-nowrap">
                                 @if(isset($programme->subscriptions) && count($programme->subscriptions) > 0)
                                 @foreach($programme->subscriptions as $abonnement)
-                                    <div class="flex items-center justify-between">
+                                    <div class="flex items-center justify-between mb-2">
                                         <span>{{ $abonnement->user->name }}</span>
                                         <form action="{{ route('abonnements.accept', $abonnement->id) }}" method="POST">
                                             @csrf
-                                            <button type="submit" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                                            <button type="submit" class=" bg-green-600 text-white font-bold py-2 px-4 rounded">
                                                 Accepter
                                             </button>
                                         </form>
