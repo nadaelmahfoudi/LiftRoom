@@ -22,7 +22,12 @@ class AuthController extends Controller
         
         if ($this->authRepository->login($credentials)) {
             $request->session()->regenerate();
-            return redirect('/Dashboard');
+    
+            if (auth()->user()->roles->pluck('role')->contains('admin')) {
+                return redirect('/skills');
+            } else {
+                return redirect('/');
+            }
         }
         
         return back()->withInput($request->only('email'));
@@ -37,7 +42,7 @@ class AuthController extends Controller
     public function loginForm(){
 
         return view('auth.login');
-        
+
     }
     public function register(RegisterRequest $request)
     {
@@ -45,7 +50,7 @@ class AuthController extends Controller
         
         $user = $this->authRepository->register($data);
         $this->authRepository->assignRole($user, 'client');
-        return redirect('/Dashboard');
+        return redirect('/');
     }
 
     public function logout(Request $request)

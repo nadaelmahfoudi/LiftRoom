@@ -18,6 +18,9 @@ class AbonnementController extends Controller
 
     public function store(AbonnementRequest $request)
     {
+        if (!Auth::check()) {
+            return redirect()->back()->with('error', 'Vous devez vous connecter d\'abord.');
+        }
 
         $validatedData = $request->validated();
         $userId = Auth::id();
