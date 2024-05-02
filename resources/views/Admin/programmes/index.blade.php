@@ -49,7 +49,7 @@
                                 <td class="px-4 py-4 text-sm font-medium text-gray-900 dark:text-gray-200 whitespace-nowrap">
                                     {{ $programme->titre }}
                                 </td>
-                                <td class="px-4 py-4 text-sm text-gray-800 dark:text-gray-300 whitespace-nowrap">{{ $programme->description}}</td>
+                                <td class="px-4 py-4 text-sm text-gray-800 dark:text-gray-300 whitespace-nowrap">{{ Str::limit($programme->description, 20) }}</td>
                                 <td class="px-4 py-4 text-sm font-medium text-gray-800 dark:text-gray-200 whitespace-nowrap">
                                     @if ($programme->image)
                                     <img src="{{ asset('storage/' . $programme->image) }}" alt="programme Image">

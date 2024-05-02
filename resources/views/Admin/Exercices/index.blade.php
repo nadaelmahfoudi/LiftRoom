@@ -53,9 +53,9 @@
                                         {{ $exercice->titre }}
                                     </td>
                                     <td class="px-4 py-4 text-sm text-gray-800 dark:text-gray-300 whitespace-nowrap">
-                                        {{ $exercice->description }}
+                                        {{ Str::limit($exercice->description, 20) }}
                                     </td>
-                                    <td class="px-4 py-4 text-sm font-medium text-gray-800 dark:text-gray-200 whitespace-nowrap">
+                                    <td class="px-4 py-4 text-sm font-medium text-gray-800 dark:text-gray-200 whitespace-nowrap w-20">
                                     @if ($exercice->image)
                                     <img src="{{ asset('storage/' . $exercice->image) }}" alt="Exercice Image">
                                     @else

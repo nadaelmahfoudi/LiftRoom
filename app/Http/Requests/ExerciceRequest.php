@@ -24,7 +24,7 @@ class ExerciceRequest extends FormRequest
     {
         return [
             'titre' => 'required|string|max:255',
-            'description' => 'required|string',
+            'description' => 'required|string|max:500',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif', 
             'duree' => 'required|integer|min:1', 
         ];

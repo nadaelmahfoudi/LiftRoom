@@ -26,6 +26,9 @@
                 <div class="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
                     @if (Auth::check() && auth()->user()->roles->pluck('role')->contains('admin'))
                         <a href="/" class="px-3 py-2 mx-3 mt-2 text-gray-200 transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-500 dark:hover:bg-gray-700">Home</a>
+                        <a href="{{route('AboutUs')}}" class="px-3 py-2 mx-3 mt-2 text-gray-200 transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-500 dark:hover:bg-gray-700">About Us</a>
+                        <a href="{{route('Exercises')}}" class="px-3 py-2 mx-3 mt-2 text-gray-200 transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-500 dark:hover:bg-gray-700">Exercises</a>
+                        <a href="{{route('ContactUs')}}" class="px-3 py-2 mx-3 mt-2 text-gray-200 transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-500 dark:hover:bg-gray-700">Contact Us</a>
                         <a href="{{ route('skills.index') }}" class="px-3 py-2 mx-3 mt-2 text-gray-200 transition-colors duration-300 transform rounded-md lg:mt-0  hover:bg-gray-500 dark:hover:bg-gray-700">Dashboard</a>
                     @endif
                     @guest
